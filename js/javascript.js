@@ -28,6 +28,23 @@ $(document).ready(function(){
 })
 
 $(document).ready(function(){
+    $("#submit-btn-1").click(function(){
+        var value = $("#id-input input").val()
+        var url = 'sms:gocheckin1@hotmail.com;body='+ value
+        window.location.href = url;
+    });
+})
+
+$(document).ready(function(){
+    $("#submit-btn-2").click(function(){
+        var value = $("#id-input input").val()
+        var url = 'sms://gocheckin1@hotmail.com?body='+ value
+        window.location.href = url;
+    });
+})
+
+
+$(document).ready(function(){
     $("#clear-btn").click(function(){
         $("#id-input input").val('')
         $("#submit-btn").addClass("disabled");

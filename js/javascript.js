@@ -9,10 +9,14 @@ $(document).ready(function(){
         else{
             if(value && value != '') {
                 $("#submit-btn").removeClass("disabled");
+                $("#submit-btn-1").removeClass("disabled");
+                $("#submit-btn-2").removeClass("disabled");
                 $("#clear-btn").addClass("d-flex");
             }
             else{
                 $("#submit-btn").addClass("disabled");
+                $("#submit-btn-1").addClass("disabled");
+                $("#submit-btn-2").addClass("disabled");
                 $("#clear-btn").removeClass("d-flex");
             }
         }

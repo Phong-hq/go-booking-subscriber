@@ -13,7 +13,7 @@
         <title>Go booking</title>
     </head>
     <body>
-        <div class="flex-center home">
+        <div class="flex-center position-relative home">
             <div class="shadow">
                 <div class="position-relative box">
                     <div class="w-full">
@@ -31,14 +31,29 @@
                                 </div>
                             </div>
                             <p class="fs-6 text-center">input your Gocheckin ID and register now</p>
-                            <button class="submit disabled" id="submit-btn">Register now</button>
-                            <button class="submit disabled" id="submit-btn-1">Register now</button>
+                            <p id="test"></p>
                             <button class="submit disabled" id="submit-btn-2">Register now</button>
                         </div>
                     </div>
                     <p class="text-bottom">Powered by Gocheckin</p>
                     <img class="image top" src="./images/form-background-3.png" alt="">
                     <img class="image bottom" src="./images/form-background-2.png" alt="">
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="modal-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" id="myInput">
+                        Launch demo modal
+                    </button>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <p> Soạn: <span class="my-text-primary fw-semibold" id="sms-body">ST150K 398669495</span> gửi: <span class="my-text-primary fw-semibold" id="sms-phone"> 9123</span></p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -47,6 +62,6 @@
         <!-- JAVASCRIPT -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script type="text/javascript" src="./js/javascript.js"></script>
-
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     </body>
 </html>

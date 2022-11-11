@@ -2,20 +2,17 @@
 $(document).ready(function(){
     $("#id-input input").keyup( function(e) {
         var value = $(this).val()
-        console.log(e.originalEvent);
+        // value = value.toLowerCase();
+        // $(this).val(value)
         if(e.originalEvent.key && e.originalEvent.key == 'Enter') {
             $("#submit-btn").click();
         }
         else{
             if(value && value != '') {
-                $("#submit-btn").removeClass("disabled");
-                $("#submit-btn-1").removeClass("disabled");
                 $("#submit-btn-2").removeClass("disabled");
                 $("#clear-btn").addClass("d-flex");
             }
             else{
-                $("#submit-btn").addClass("disabled");
-                $("#submit-btn-1").addClass("disabled");
                 $("#submit-btn-2").addClass("disabled");
                 $("#clear-btn").removeClass("d-flex");
             }
@@ -23,27 +20,25 @@ $(document).ready(function(){
     })
 })
 
-$(document).ready(function(){
-    $("#submit-btn").click(function(){
-        var value = $("#id-input input").val()
-        var url = 'sms:gocheckin1@hotmail.com?body='+ value
-        window.location.href = url;
-    });
-})
-
-$(document).ready(function(){
-    $("#submit-btn-1").click(function(){
-        var value = $("#id-input input").val()
-        var url = 'sms:gocheckin1@hotmail.com;body='+ value
-        window.location.href = url;
-    });
-})
 
 $(document).ready(function(){
     $("#submit-btn-2").click(function(){
+        var userAgent = window.navigator.userAgent
+        var phone = 'gocheckin1@hotmail.com'
         var value = $("#id-input input").val()
-        var url = 'sms:gocheckin1@hotmail.com&body='+ value
-        window.location.href = url;
+        $("#test").text(userAgent)
+        $("#sms-phone").text(phone)
+        $("#sms-body").text(value.toLowerCase())
+        if(userAgent.includes('ipad') || userAgent.includes('iphone')) {
+            value = value.toLowerCase().replaceAll(' ', '%20')
+            var url = 'sms:' + phone + '&body=REG%20'+ value
+            console.log(url);
+            window.location.href = url;
+
+        }
+        else {
+            $("#myInput").click();
+        }
     });
 })
 
@@ -54,3 +49,4 @@ $(document).ready(function(){
         $("#submit-btn").addClass("disabled");
     });
 })
+

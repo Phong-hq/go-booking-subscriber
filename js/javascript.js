@@ -5,7 +5,6 @@ $(document).ready(function(){
         // value = value.toLowerCase();
         // $(this).val(value)
         if(e.originalEvent && e.originalEvent.key == 'Enter' && value  != '') {
-            console.log('???s');
             $("#submit-btn").click();
         }
         else{
@@ -26,7 +25,7 @@ $(document).ready(function(){
     $("#submit-btn").click(function(){
         var userAgent = window.navigator.userAgent
         var phone = 'gocheckin1@hotmail.com'
-        var value = $("#id-input input").val()
+        var value = 'REG ' + $("#id-input input").val()
         // $("#test").text(userAgent)
         $("#sms-phone").text(phone)
         $("#sms-body").text(value.toLowerCase())

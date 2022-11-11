@@ -25,10 +25,10 @@ $(document).ready(function(){
     $("#submit-btn").click(function(){
         var userAgent = window.navigator.userAgent
         var phone = 'gocheckin1@hotmail.com'
-        var value = 'REG ' + $("#id-input input").val()
+        var value = $("#id-input input").val()
         // $("#test").text(userAgent)
         $("#sms-phone").text(phone)
-        $("#sms-body").text(value.toLowerCase())
+        $("#sms-body").text('REG ' + value.toLowerCase())
         if(userAgent.toLowerCase().includes('mac') || userAgent.toLowerCase().includes('iphone')) {
             value = value.toLowerCase().replaceAll(' ', '%20')
             var url = 'sms:' + phone + '&body=REG%20'+ value

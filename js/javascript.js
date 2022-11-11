@@ -26,18 +26,16 @@ $(document).ready(function(){
         var userAgent = window.navigator.userAgent
         var phone = 'gocheckin1@hotmail.com'
         var value = $("#id-input input").val()
-        $("#test").text(userAgent)
+        // $("#test").text(userAgent)
         $("#sms-phone").text(phone)
         $("#sms-body").text(value.toLowerCase())
-        if(userAgent.toLowerCase().includes('ipad') || userAgent.toLowerCase().includes('iphone')) {
+        if(userAgent.toLowerCase().includes('mac') || userAgent.toLowerCase().includes('iphone')) {
             value = value.toLowerCase().replaceAll(' ', '%20')
             var url = 'sms:' + phone + '&body=REG%20'+ value
-            console.log(url);
             window.location.href = url;
-
         }
         else {
-            $("#myInput").click();
+            $("#modal-btn").click();
         }
     });
 })

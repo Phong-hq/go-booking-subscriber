@@ -29,7 +29,7 @@ $(document).ready(function(){
         $("#test").text(userAgent)
         $("#sms-phone").text(phone)
         $("#sms-body").text(value.toLowerCase())
-        if(userAgent.includes('ipad') || userAgent.includes('iphone')) {
+        if(userAgent.toLowerCase().includes('ipad') || userAgent.toLowerCase().includes('iphone')) {
             value = value.toLowerCase().replaceAll(' ', '%20')
             var url = 'sms:' + phone + '&body=REG%20'+ value
             console.log(url);

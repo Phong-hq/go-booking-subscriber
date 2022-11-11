@@ -4,16 +4,17 @@ $(document).ready(function(){
         var value = $(this).val()
         // value = value.toLowerCase();
         // $(this).val(value)
-        if(e.originalEvent.key && e.originalEvent.key == 'Enter') {
+        if(e.originalEvent && e.originalEvent.key == 'Enter' && value  != '') {
+            console.log('???s');
             $("#submit-btn").click();
         }
         else{
             if(value && value != '') {
-                $("#submit-btn-2").removeClass("disabled");
+                $("#submit-btn").removeClass("disabled");
                 $("#clear-btn").addClass("d-flex");
             }
             else{
-                $("#submit-btn-2").addClass("disabled");
+                $("#submit-btn").addClass("disabled");
                 $("#clear-btn").removeClass("d-flex");
             }
         }
@@ -22,7 +23,7 @@ $(document).ready(function(){
 
 
 $(document).ready(function(){
-    $("#submit-btn-2").click(function(){
+    $("#submit-btn").click(function(){
         var userAgent = window.navigator.userAgent
         var phone = 'gocheckin1@hotmail.com'
         var value = $("#id-input input").val()

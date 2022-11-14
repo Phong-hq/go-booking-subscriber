@@ -26,7 +26,6 @@ $(document).ready(function(){
         var userAgent = window.navigator.userAgent
         var phone = 'gocheckin1@hotmail.com'
         var value = $("#id-input input").val()
-        // $("#test").text(userAgent)
         $("#sms-phone").text(phone)
         $("#sms-body").text('REG ' + value.toLowerCase())
         if(userAgent.toLowerCase().includes('mac') || userAgent.toLowerCase().includes('iphone')) {
@@ -45,6 +44,7 @@ $(document).ready(function(){
     $("#clear-btn").click(function(){
         $("#id-input input").val('')
         $("#submit-btn").addClass("disabled");
+        $("#clear-btn").removeClass("d-flex");
     });
 })
 
